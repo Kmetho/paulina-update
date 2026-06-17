@@ -1,11 +1,60 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import SocialIcons from "../components/SocialIcons.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Paulina Rams | graphic designer | visual artist  ◕‿◕｡"
+  bodyClass="home-bg"
+>
+  <img class="png shape left" src="/images/home/shape1_left.png" />
+  <img class="png shape right" src="/images/home/shape1_right.png" />
+
+  <div class="flower-box">
+    <img
+      class="png shade"
+      src="/images/home/flower_shade_transparent.png"
+      alt="Shadow of the flower."
+    />
+    <img
+      class="png stars"
+      src="/images/home/stars.png"
+      alt="Stars and gradient background."
+    />
+    <img
+      class="png flower"
+      src="/images/home/flower_transparent.png"
+      alt="Metallic flower."
+    />
+  </div>
+
+  <div class="homepage container">
+    <div class="box name-box">
+      <h1 class="name first">PAULINA</h1>
+      <h1 class="name last">RAMS</h1>
+      <img
+        class="smol"
+        src="/images/home/photo smol.png"
+        alt="Very small photo of Paulina."
+      />
+      <p class="whoareyou">visual artist / designer</p>
+    </div>
+
+    <div class="box work-box">
+      <a
+        href="https://www.figma.com/proto/IDiu9gWKBNDh9FXewjC1LY/folio?page-id=0%3A1&node-id=12%3A11&viewport=392%2C592%2C0.03&scaling=contain"
+        target="_blank"
+      >
+        <p class="work-click">work</p>
+      </a>
+    </div>
+
+    <div class="box about-box">
+      <a href="/about">
+        <p class="about-click">about</p>
+      </a>
+    </div>
+
+    <SocialIcons />
+  </div>
 </Layout>

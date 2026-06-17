@@ -1,23 +1,56 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+// Shared shell for every page. Import the global styles once here so they
+// apply everywhere. Each page passes its title/description and the <body>
+// background class, then fills the page content into the <slot />.
+import "../styles/fonts.css";
+import "../styles/styles.css";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title: string;
+  description?: string;
+  bodyClass: string;
+}
+
+const {
+  title,
+  description = "Paulina Rams | graphic designer | visual artist  ◕‿◕｡",
+  bodyClass,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>{title}</title>
+    <link rel="icon" href="/images/smile.png" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://paulinarams.com/" />
+    <meta name="description" content={description} />
+    <meta property="og:image" content="/images/smile.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:url" content="https://paulinarams.com/" />
+    <meta property="og:site_name" content={title} />
+  </head>
+
+  <body class={bodyClass}>
+    
+    <slot />
+
+    <div class="error"></div>
+
+    <script
+      is:inline
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    ></script>
+    <script is:inline src="/scripts/jquery.ripples.js"></script>
+    <script is:inline src="/scripts/custom.js"></script>
+  </body>
+</html>
