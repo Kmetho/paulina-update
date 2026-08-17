@@ -224,7 +224,6 @@ h1 {
   .socials-box {
     bottom: 39px;
   }
-  /* Shrink the icons on short screens (previously done in index.js). */
   .social-icon {
     height: 24px;
   }

@@ -1,7 +1,4 @@
 ---
-// Shared shell for every page. Import the global styles once here so they
-// apply everywhere. Each page passes its title/description and the <body>
-// background class, then fills the page content into the <slot />.
 import "../styles/fonts.css";
 import "../styles/styles.css";
 
@@ -41,16 +38,8 @@ const {
   </head>
 
   <body class={bodyClass}>
-    
     <slot />
 
     <div class="error"></div>
-
-    <script
-      is:inline
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-    ></script>
-    <script is:inline src="/scripts/jquery.ripples.js"></script>
-    <script is:inline src="/scripts/custom.js"></script>
   </body>
 </html>
